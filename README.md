@@ -12,8 +12,7 @@ sh run_mummer.sh $ref $query $prefix  $core
 
 sort -k 1,1 -k 2,2n ${prefix}.filter.linkage >${prefix}.filter.linkage.sorted
 
-perl FindBestPositon.pl ${prefix}.filter.linkage.sorted  >${prefix}.filter.linkage.sorted.info;done
+perl FindBestPositon.pl ${prefix}.filter.linkage.sorted  >${prefix}.fix.info;done
 
-perl chain_ctg_2_chr.pl  $query  ${prefix}.filter.linkage.sorted.info
-
-mv ${prefix}.filter.linkage.sorted.info ${prefix}.fix.info
+perl chain_ctg_2_chr.pl  $query  ${prefix}.fix.info
+ 
